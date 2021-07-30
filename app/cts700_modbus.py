@@ -1,7 +1,11 @@
 #! /usr/bin/env python
 
+import os
 import time
 from pymodbus.client.sync import ModbusTcpClient
+
+host = os.environ.get('CTS700_HOST', 'localhost')
+port = int(os.environ.get('CTS700_PORT', '502'))
 
 registerMapping = {
     "outdoor_temp":       [20282, 0.1],
@@ -13,7 +17,7 @@ registerMapping = {
     "humidity_average":   [20164, 1],
 }
 
-client = ModbusTcpClient('10.10.10.90', port=502)
+client = ModbusTcpClient(host, port=port)
 
 
 def readRegister(register, slaveID, unitConversionFactor):
