@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 
+import time
 from pymodbus.client.sync import ModbusTcpClient
 
 registerMapping = {
@@ -12,6 +13,9 @@ registerMapping = {
     "humidity_average":   [20164, 1],
 }
 
+client = ModbusTcpClient('10.10.10.90', port=502)
+
+
 def readRegister(register, slaveID, unitConversionFactor):
     try:
         response = client.read_holding_registers(register, 1, unit=slaveID)
@@ -21,10 +25,20 @@ def readRegister(register, slaveID, unitConversionFactor):
         print("Error reading register: " + register)
 
 
-client = ModbusTcpClient('10.10.10.90', port=502)
+def getValues():
 
-for key in registerMapping:
-    client.connect()
-    print(key + ": " +
-          str(readRegister(registerMapping[key][0], 1, registerMapping[key][1])))
-    client.close()
+    for key in registerMapping:
+        client.connect()
+        print(
+            key + " " + str(readRegister(registerMapping[key][0], 1, registerMapping[key][1])))
+        client.close()
+
+
+def loop():
+    while True:
+        getValues()
+        time.sleep(5)
+
+
+if __name__ == "__main__":
+    getValues()
