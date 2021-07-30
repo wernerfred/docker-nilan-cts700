@@ -23,21 +23,17 @@ def readRegister(register, slaveID, unitConversionFactor):
         return calcUnit
     except:
         print("Error reading register: " + register)
+        raise
 
 
 def getValues():
-
+    result = {}
     for key in registerMapping:
         client.connect()
-        print(
-            key + " " + str(readRegister(registerMapping[key][0], 1, registerMapping[key][1])))
+        response = readRegister(registerMapping[key][0], 1, registerMapping[key][1])
+        result[key] = response
         client.close()
-
-
-def loop():
-    while True:
-        getValues()
-        time.sleep(5)
+    return result
 
 
 if __name__ == "__main__":
