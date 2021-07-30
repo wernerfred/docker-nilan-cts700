@@ -1,7 +1,6 @@
 #! /usr/bin/env python
 
 import os
-import time
 from pymodbus.client.sync import ModbusTcpClient
 
 host = os.environ.get('CTS700_HOST', 'localhost')
