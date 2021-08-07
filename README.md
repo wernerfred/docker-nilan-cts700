@@ -6,7 +6,9 @@
 ![Docker Image Version (latest semver)](https://img.shields.io/docker/v/wernerfred/docker-nilan-cts700?label=Latest%20Image)
 ![GitHub Release Date](https://img.shields.io/github/release-date/wernerfred/docker-nilan-cts700?label=Release%20Date)
 
-# docker-docker-nilan-cts700
+# docker-nilan-cts700
+
+This project uses `pymodbus` to read the Modbus RTU data from a nilan CTS700 controller. The `prometheus_client` library is used to expose the data via a Prometheus server.
 
 ## ENV
 
