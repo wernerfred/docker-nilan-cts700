@@ -8,11 +8,55 @@
 
 # docker-nilan-cts700
 
-This project uses `pymodbus` to read the Modbus RTU data from a nilan CTS700 controller. The `prometheus_client` library is used to expose the data via a Prometheus server.
+This project uses `pymodbus` to read the Modbus RTU data from a nilan CTS700 controller. The `prometheus_client` library is used to expose the data via a Prometheus server. All of this is packed in a [Docker](https://hub.docker.com/r/wernerfred/docker-nilan-cts700) container.
 
-## ENV
+## Installation
 
-CTS700_HOST (localhost)
-CTS700_PORT (502)
-PROM_EXP_PORT (8080)
-PROM_EXP_CHECK_INTERVAL (60)
+### Build from source
+
+To build this project from source make sure to clone this repository from github and run the following commands:
+
+```
+docker build -t wernerfred/docker-nilan-cts700 .
+```
+
+### Pull from Docker Hub
+
+You can directly pull the latest release from the [Docker Hub repository](https://hub.docker.com/r/wernerfred/docker-nilan-cts700/):
+
+```
+docker pull wernerfred/docker-nilan-cts700
+```
+
+## Usage
+
+To run the container you can use `docker run`. You might adjust the following command according to your needs:
+
+```
+docker run -d \
+           -p 8080:8080 \
+           wernerfred/docker-nilan-cts700
+```
+
+### Configuration
+
+The following environment variables can be used to configure the container:
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `CTS700_HOST` | `192.168.5.107` | The IP address of the nilan CTS700 controller |
+| `CTS700_PORT` | `502` | The Modbus RTU port of the nilan CTS700 controller |
+| `PROM_EXPORTER_PORT` | `8080` | The port on which the Prometheus server listens |
+| `PROM_EXPORTER_CHECK_INTERVAL` | `60` | The interval at which the Prometheus server checks for new data in seconds. |	
+
+Simply add the  environment variables you want to change to your `docker run` command:
+
+```
+docker run -d \
+           -p 8080:8080 \
+           -e CTS700_HOST=192.168.5.107 \
+           -e CTS700_PORT=502 \
+           -e PROM_EXPORTER_PORT=8080 \
+           -e PROM_EXPORTER_CHECK_INTERVAL=60 \
+           wernerfred/docker-nilan-cts700
+```
