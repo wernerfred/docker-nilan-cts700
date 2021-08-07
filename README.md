@@ -8,7 +8,7 @@
 
 # docker-nilan-cts700
 
-This project uses `pymodbus` to read the Modbus RTU data from a nilan CTS700 controller. The `prometheus_client` library is used to expose the data via a Prometheus server. All of this is packed in a [Docker](https://hub.docker.com/r/wernerfred/docker-nilan-cts700) container.
+This project uses `pymodbus` to read the Modbus RTU data from a [nilan system with a CTS700 controller](https://www.nilan.at/de-at/startseite/losungen/wohnungslosungen/kompaktlosung/compact-p-cts700). The `prometheus_client` library is used to expose the data via a Prometheus server. All of this is packed in a [Docker](https://hub.docker.com/r/wernerfred/docker-nilan-cts700) container.
 
 ## Installation
 
@@ -47,7 +47,7 @@ The following environment variables can be used to configure the container:
 | `CTS700_HOST` | `192.168.5.107` | The IP address of the nilan CTS700 controller |
 | `CTS700_PORT` | `502` | The Modbus RTU port of the nilan CTS700 controller |
 | `PROM_EXPORTER_PORT` | `8080` | The port on which the Prometheus server listens |
-| `PROM_EXPORTER_CHECK_INTERVAL` | `60` | The interval at which the Prometheus server checks for new data in seconds. |	
+| `PROM_EXPORTER_CHECK_INTERVAL` | `60` | The interval at which the Prometheus server checks for new data in seconds |	
 
 Simply add the  environment variables you want to change to your `docker run` command:
 
