@@ -3,7 +3,7 @@
 import os
 from pymodbus.client.sync import ModbusTcpClient
 
-host = os.environ.get('CTS700_HOST', 'localhost')
+host = os.environ.get('CTS700_HOST', '192.168.5.107')
 port = int(os.environ.get('CTS700_PORT', '502'))
 
 registerMapping = {
