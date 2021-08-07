@@ -7,7 +7,7 @@ from cts700_modbus import getValues
 
 
 port = int(os.environ.get('PROM_EXP_PORT', 8080))
-checkInterval = int(os.environ.get('PROM_EXP_CK_INTERVAL', 60))
+checkInterval = int(os.environ.get('PROM_EXP_CHECK_INTERVAL', 60))
 
 gOutdoorTemp = Gauge('nilan_cts700_outdoor_temp', 'Outdoor temperature', ['scale'])
 gIndoorTemp = Gauge('nilan_cts700_indoor_temp', 'Indoor temperature', ['scale'])

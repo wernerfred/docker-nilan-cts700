@@ -1,8 +1,8 @@
-# nilan-cts700-modbus
+# nilan-cts700
 
 ## ENV
 
 CTS700_HOST (localhost)
 CTS700_PORT (502)
 PROM_EXP_PORT (8080)
-PROM_EXP_CK_INTERVAL (60)
+PROM_EXP_CHECK_INTERVAL (60)
