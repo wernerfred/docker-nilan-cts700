@@ -1,4 +1,4 @@
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/wernerfred/docker-nilan-cts700/Build%20+%20push%20to%20DockerHub?label=Docker%20Build)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/wernerfred/docker-nilan-cts700/Build%20current%20version%20+%20push%20to%20DockerHub?label=Docker%20Build)
 ![Docker Pulls](https://img.shields.io/docker/pulls/wernerfred/docker-nilan-cts700?label=Docker%20Pulls)
 ![GitHub](https://img.shields.io/github/license/wernerfred/docker-nilan-cts700?label=License)
 ![Docker Image Size (latest semver)](https://img.shields.io/docker/image-size/wernerfred/docker-nilan-cts700?label=Image%20Size)
