@@ -74,3 +74,17 @@ docker run -d \
            -e PROM_EXPORTER_CHECK_INTERVAL=60 \
            wernerfred/docker-nilan-cts700
 ```
+
+### Prometheus
+
+The metrics are exposed via a Prometheus server. To access the metrics you can use the following URL:
+
+`http://<docker-host>:<prom-exporter-port>/metrics`
+
+To add this URL to your Prometheus configuration you can use the following snippet:
+
+```
+static_configs: [
+  {"labels": {"job": "nilan_cts700"}, "targets": ["<docker-host>:<prom-exporter-port>"]}
+]
+```
