@@ -10,6 +10,20 @@
 
 This project uses `pymodbus` to read the Modbus RTU data from a [nilan system with a CTS700 controller](https://www.nilan.at/de-at/startseite/losungen/wohnungslosungen/kompaktlosung/compact-p-cts700). The `prometheus_client` library is used to expose the data via a Prometheus server. All of this is packed in a [Docker](https://hub.docker.com/r/wernerfred/docker-nilan-cts700) container.
 
+## Metrics
+
+The following metrics are exposed:
+
+| Metric | Register | Description | Unit | Prometheus Type |
+|--------|:--------:|-------------|:----:|:---------------:|
+| `nilan_cts700_outdoor_temp` | `20282` | T1 outdoor air temperature | Celsius | `Gauge` |
+| `nilan_cts700_indoor_temp` | `20286` | T3 extract air, room temperature | Celsius | `Gauge` |
+| `nilan_cts700_indoor_temp_wanted `| `20260` | Wanted room temperature | Celsius | `Gauge` |
+| `nilan_cts700_bypass_state` | `21773` | Bypass damper | | `Gauge` |
+| `nilan_cts700_water_temp_bottom` | `20522` | T12 bottom temperature in DHW water tank | Celsius | `Gauge` |
+| `nilan_cts700_water_temp_wanted` | `20460` | Hot water set point | Celsius | `Gauge` |
+| `nilan_cts700_humidity_average` | `20164` | Average Humidity | Percent | `Gauge` |
+
 ## Installation
 
 ### Build from source
