@@ -14,7 +14,7 @@ This project uses `pymodbus` to read the Modbus RTU data from a [nilan system wi
 
 ### Build from source
 
-To build this project from source make sure to clone this repository from github and run the following commands:
+To build this project from source make sure to clone this repository from github and run the following command:
 
 ```
 docker build -t wernerfred/docker-nilan-cts700 .
