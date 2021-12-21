@@ -38,6 +38,8 @@ def getValues():
             if response > 6000:
                 calcUnit = (response * 10 - 65530) / 10
                 result[key] = calcUnit
+            else:
+                result[key] = response
         else:
             result[key] = response
         client.close()
