@@ -34,7 +34,12 @@ def getValues():
     for key in registerMapping:
         client.connect()
         response = readRegister(registerMapping[key][0], 1, registerMapping[key][1])
-        result[key] = response
+        if key == "outdoor_temp":
+            if response > 6000:
+                calcUnit = (response * 10 - 65530) / 10
+                result[key] = calcUnit
+        else:
+            result[key] = response
         client.close()
     return result
 
