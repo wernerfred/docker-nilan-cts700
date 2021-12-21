@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY requirements.txt /app/
 
-RUN pip install --prefix=/app -r requirements.txt
+RUN pip install --no-cache-dir --prefix=/app -r requirements.txt
 
 FROM base
 
