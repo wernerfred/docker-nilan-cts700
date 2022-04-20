@@ -27,8 +27,7 @@ The following metrics are exposed:
 | `nilan_cts700_humidity` | `21776` | Actual Humidity | Percent | `Gauge` |
 | `nilan_cts700_operating_mode` | `20120` | Operating mode | | `Gauge` |
 | `nilan_cts700_supply_air_temp` | `20284` | T2 supply air temperature | Celsius | `Gauge` |
-| `nilan_cts700_supply_fan_speed `| `21771` | Supply fan speed | Percent | `Gauge` |
-| `nilan_cts700_extract_fan_speed `| `21772` | Extract fan speed | Percent | `Gauge` |
+
 
 ## Installation
 
