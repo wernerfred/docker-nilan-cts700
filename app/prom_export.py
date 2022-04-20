@@ -20,6 +20,8 @@ gHumidityAverage = Gauge('nilan_cts700_humidity_average', 'Humidity average')
 gHumidity = Gauge('nilan_cts700_humidity', 'Humidity')
 gOperatingMode = Gauge('nilan_cts700_system_state', 'System State')
 gSupplyAirTemp = Gauge('nilan_cts700_supply_air_temp', 'Supply air temperature', ['scale'])
+gSupplyFanSpeed = Gauge('nilan_cts700_supply_fan_speed', 'Supply fan speed')
+gExtractFanSpeed = Gauge('nilan_cts700_extract_fan_speed', 'Extract fan speed')
 
 gIndoorTemp.labels('°C')
 gOutdoorTemp.labels('°C')
@@ -44,6 +46,8 @@ def setMetrics():
         gHumidity.set(values['humidity'])
         gOperatingMode.set(values['operating_mode'])
         gSupplyAirTemp.labels('°C').set(values['supply_air_temp'])
+        gSupplyFanSpeed.set(values['supply_fan_speed'])
+        gExtractFanSpeed.set(values['extract_fan_speed'])
     except:
         print("Unexpected error")
         raise
