@@ -15,6 +15,7 @@ registerMapping = {
     "water_temp_top":     [20520, 0.11],
     "water_temp_wanted":  [20460, 0.11],
     "humidity_average":   [20164, 1],
+    "operating_mode":     [20120, 1],
 }
 
 client = ModbusTcpClient(host, port=port)

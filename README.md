@@ -24,6 +24,7 @@ The following metrics are exposed:
 | `nilan_cts700_water_temp_top` | `20520` | T11 top temperature in DHW water tank | Celsius | `Gauge` |
 | `nilan_cts700_water_temp_wanted` | `20460` | Hot water set point | Celsius | `Gauge` |
 | `nilan_cts700_humidity_average` | `20164` | Average Humidity | Percent | `Gauge` |
+| `nilan_cts700_operating_mode` | `20120` | Operating mode | | `Gauge` |
 
 ## Installation
 

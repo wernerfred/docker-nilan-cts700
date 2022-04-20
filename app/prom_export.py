@@ -17,7 +17,7 @@ gWaterTempBottom = Gauge('nilan_cts700_water_temp_bottom', 'Water temperature bo
 gWaterTempTop = Gauge('nilan_cts700_water_temp_top', 'Water temperature top', ['scale'])
 gWaterTempWanted = Gauge('nilan_cts700_water_temp_wanted', 'Water temperature wanted', ['scale'])
 gHumidityAverage = Gauge('nilan_cts700_humidity_average', 'Humidity average')
-
+gOperatingMode = Gauge('nilan_cts700_system_state', 'System State')
 
 gIndoorTemp.labels('°C')
 gOutdoorTemp.labels('°C')
@@ -38,6 +38,7 @@ def setMetrics():
         gWaterTempTop.labels('°C').set(values['water_temp_top'])
         gWaterTempWanted.labels('°C').set(values['water_temp_wanted'])
         gHumidityAverage.set(values['humidity_average'])
+        gOperatingMode.set(values['operating_mode'])
     except:
         print("Unexpected error")
         raise
