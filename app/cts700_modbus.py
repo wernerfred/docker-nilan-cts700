@@ -12,6 +12,7 @@ registerMapping = {
     "indoor_temp_wanted": [20260, 0.1],
     "bypass_state":       [21773, 1],
     "water_temp_bottom":  [20522, 0.11],
+    "water_temp_top":     [20520, 0.11],
     "water_temp_wanted":  [20460, 0.11],
     "humidity_average":   [20164, 1],
 }

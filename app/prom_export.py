@@ -14,6 +14,7 @@ gIndoorTemp = Gauge('nilan_cts700_indoor_temp', 'Indoor temperature', ['scale'])
 gIndoorTempWanted = Gauge('nilan_cts700_indoor_temp_wanted', 'Indoor temperature wanted', ['scale'])
 gBypassState = Gauge('nilan_cts700_bypass_state', 'Bypass state')
 gWaterTempBottom = Gauge('nilan_cts700_water_temp_bottom', 'Water temperature bottom', ['scale'])
+gWaterTempTop = Gauge('nilan_cts700_water_temp_top', 'Water temperature top', ['scale'])
 gWaterTempWanted = Gauge('nilan_cts700_water_temp_wanted', 'Water temperature wanted', ['scale'])
 gHumidityAverage = Gauge('nilan_cts700_humidity_average', 'Humidity average')
 
@@ -22,6 +23,7 @@ gIndoorTemp.labels('°C')
 gOutdoorTemp.labels('°C')
 gIndoorTempWanted.labels('°C')
 gWaterTempBottom.labels('°C')
+gWaterTempTop.labels('°C')
 gWaterTempWanted.labels('°C')
 
 
@@ -33,6 +35,7 @@ def setMetrics():
         gIndoorTempWanted.labels('°C').set(values['indoor_temp_wanted'])
         gBypassState.set(values['bypass_state'])
         gWaterTempBottom.labels('°C').set(values['water_temp_bottom'])
+        gWaterTempTop.labels('°C').set(values['water_temp_top'])
         gWaterTempWanted.labels('°C').set(values['water_temp_wanted'])
         gHumidityAverage.set(values['humidity_average'])
     except:
