@@ -19,6 +19,10 @@ registerMapping = {
     "humidity":           [21776, 1],
     "operating_mode":     [20120, 1],
     "user_fan_speed":     [4747, 1],
+    "outdoor_air_filter_days_remaining": [20103, 1],
+    "outdoor_air_filter_days_between": [20102, 1],
+    "extract_air_filter_days_remaining": [20107, 1],
+    "extract_air_filter_days_between": [20106, 1],
 }
 
 client = ModbusTcpClient(host, port=port)

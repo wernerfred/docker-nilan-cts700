@@ -21,6 +21,10 @@ gHumidity = Gauge('nilan_cts700_humidity', 'Humidity')
 gOperatingMode = Gauge('nilan_cts700_system_state', 'System State')
 gSupplyAirTemp = Gauge('nilan_cts700_supply_air_temp', 'Supply air temperature', ['scale'])
 gUserFanSpeed = Gauge('nilan_cts700_user_fan_speed', 'User fan speed')
+gOutdoorAirFilterDaysRemaining = Gauge('nilan_cts700_outdoor_air_filter_days_remaining', 'Outdoor air filter days remaining')
+gOutdoorAirFilterDaysBetween = Gauge('outdoor_air_filter_days_between', 'Outdoor air filter days between')
+gExtractAirFilterDaysRemaining = Gauge('nilan_cts700_extract_air_filter_days_remaining', 'Extract air filter days remaining')
+gExtractAirFilterDaysBetween = Gauge('extract_air_filter_days_between', 'Extract air filter days between')
 
 gIndoorTemp.labels('°C')
 gOutdoorTemp.labels('°C')
@@ -46,6 +50,10 @@ def setMetrics():
         gOperatingMode.set(values['operating_mode'])
         gSupplyAirTemp.labels('°C').set(values['supply_air_temp'])
         gUserFanSpeed.set(values['user_fan_speed'])
+        gOutdoorAirFilterDaysRemaining.set(values['outdoor_air_filter_days_remaining'])
+        gOutdoorAirFilterDaysBetween.set(values['outdoor_air_filter_days_between'])
+        gExtractAirFilterDaysRemaining.set(values['extract_air_filter_days_remaining'])
+        gExtractAirFilterDaysBetween.set(values['extract_air_filter_days_between'])
     except:
         print("Unexpected error")
         raise

@@ -28,6 +28,10 @@ The following metrics are exposed:
 | `nilan_cts700_operating_mode` | `20120` | Operating mode | | `Gauge` |
 | `nilan_cts700_supply_air_temp` | `20284` | T2 supply air temperature | Celsius | `Gauge` |
 | `nilan_cts700_user_fan_speed` | `4747` | User fan speed | | `Gauge` |	
+| `nilan_cts700_outdoor_air_filter_days_remaining` | `20103` | Outdoor air filter days remaining | | `Gauge` |
+| `nilan_cts700_outdoor_air_filter_days_between` | `20102` | Outdoor air filter days between | | `Gauge` |
+| `nilan_cts700_extract_air_filter_days_remaining` | `20107` | Extract air filter days remaining | | `Gauge` |
+| `nilan_cts700_extract_air_filter_days_between` | `20106` | Extract air filter days between | | `Gauge` |
 
 ## Installation
 
